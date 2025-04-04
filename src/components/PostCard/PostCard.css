@@ -1,0 +1,106 @@
+/* PostCard.css */
+.post-card {
+    background-color: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-medium);
+    margin-bottom: var(--spacing-large);
+    padding: var(--spacing-medium);
+    transition: border-color 0.2s ease;
+}
+
+.post-card:hover {
+    border-color: var(--color-bg-tertiary); /* Легкая подсветка при наведении */
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-medium);
+}
+
+.post-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: var(--spacing-small);
+    background-color: var(--color-bg-secondary); /* Placeholder */
+}
+
+.post-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-author {
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.post-timestamp {
+    font-size: 0.85em;
+    color: var(--color-text-secondary);
+}
+
+.post-content {
+    margin-bottom: var(--spacing-medium);
+}
+
+.post-title {
+    font-size: 1.25em;
+    font-weight: 600;
+    margin: 0 0 var(--spacing-small) 0;
+    color: var(--color-text-primary);
+}
+
+.post-tags {
+    margin-bottom: var(--spacing-medium);
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-secondary);
+    font-size: 0.8em;
+    padding: 4px 8px;
+    border-radius: var(--border-radius-small);
+    margin-right: var(--spacing-small);
+    margin-bottom: var(--spacing-small); /* Для переноса строк */
+}
+
+.post-excerpt {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-medium);
+}
+
+.read-more-btn {
+    background-color: transparent;
+    color: var(--color-accent-yellow);
+    padding: var(--spacing-small) 0; /* Убираем лишние отступы */
+    font-weight: 600;
+}
+.read-more-btn:hover {
+    color: var(--color-accent-gold);
+}
+
+
+.post-footer {
+    display: flex;
+    gap: var(--spacing-medium);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--spacing-medium);
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-small);
+    padding: 0; /* Убираем паддинг кнопки */
+}
+
+.action-btn:hover {
+    color: var(--color-text-primary);
+}

@@ -1,0 +1,90 @@
+/* src/components/LeftSidebar/LeftSidebar.css */
+.left-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 60px - var(--spacing-large) * 2); /* Высота минус навбар и паддинги */
+    position: sticky; /* Делаем липким под навбаром */
+    top: calc(60px + var(--spacing-large)); /* 60px - высота навбара */
+    background-color: var(--color-bg-primary); /* Добавляем фон для липкости */
+    padding: var(--spacing-medium);
+    border-radius: var(--border-radius-medium);
+    border: 1px solid var(--color-border); /* Добавляем рамку, как на скрине */
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-link { /* Общий класс для всех ссылок в сайдбаре */
+    display: flex;
+    align-items: center;
+    padding: 10px var(--spacing-medium); /* Увеличим немного паддинг */
+    border-radius: var(--border-radius-small); /* Чуть меньше скругление */
+    margin-bottom: var(--spacing-small);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    text-decoration: none; /* Убедимся что нет подчеркивания */
+    font-size: 0.95em;
+}
+
+.sidebar-link:hover {
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+}
+
+/* Стиль для активной ссылки (добавляется NavLink) */
+.sidebar-link.active {
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+.nav-icon {
+    margin-right: var(--spacing-medium);
+    font-size: 1.1em;
+    min-width: 20px; /* Выравнивание текста */
+    text-align: center;
+}
+
+.sidebar-footer {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--spacing-medium);
+    margin-top: var(--spacing-large);
+}
+
+/* --- Выделяем кнопку Опубликовать --- */
+.publish-link {
+    color: var(--color-accent-yellow); /* Яркий цвет текста */
+    font-weight: 600;
+    /* Можно добавить фон при ховере/активности */
+}
+.publish-link:hover {
+    background-color: rgba(255, 204, 0, 0.1); /* Легкий желтый фон при ховере */
+    color: var(--color-accent-gold);
+}
+.publish-link.active { /* Если вдруг страница создания будет активна */
+    background-color: rgba(255, 204, 0, 0.15);
+    color: var(--color-accent-gold);
+}
+/* --- --- */
+
+.profile-link {
+    /* Отдельные стили для блока профиля */
+    margin-top: var(--spacing-small);
+}
+
+.profile-avatar {
+    width: 28px; /* Чуть меньше аватар */
+    height: 28px;
+    border-radius: 50%;
+    margin-right: var(--spacing-small); /* Уменьшим отступ */
+    background-color: var(--color-bg-secondary); /* Placeholder color */
+}
+
+.profile-name {
+    font-weight: 500;
+    color: var(--color-text-primary);
+    font-size: 0.9em; /* Чуть меньше имя */
+}

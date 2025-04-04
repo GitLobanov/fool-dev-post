@@ -1,0 +1,67 @@
+/* src/pages/CreatePostPage/CreatePostPage.css */
+.create-post-page {
+    background-color: var(--color-bg-primary);
+    padding: var(--spacing-large);
+    border-radius: var(--border-radius-medium);
+    border: 1px solid var(--color-border);
+}
+
+.create-post-form .form-group {
+    margin-bottom: var(--spacing-large);
+}
+
+.create-post-form label {
+    display: block;
+    margin-bottom: var(--spacing-small);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.create-post-form input[type="text"],
+.create-post-form textarea {
+    width: 100%;
+    padding: 12px; /* Побольше паддинг */
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-secondary); /* Фон поля */
+    color: var(--color-text-primary);
+    font-size: 1em;
+    font-family: var(--font-family-base);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.create-post-form input[type="text"]:focus,
+.create-post-form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent-yellow);
+    box-shadow: 0 0 0 2px rgba(255, 204, 0, 0.2); /* Подсветка фокуса */
+}
+
+.create-post-form input::placeholder,
+.create-post-form textarea::placeholder {
+    color: var(--color-text-placeholder);
+    opacity: 1;
+}
+
+.create-post-form textarea {
+    resize: vertical; /* Разрешить изменение размера */
+    min-height: 100px;
+}
+
+/* Стили для Markdown редактора (если будете использовать) */
+/* .md-editor { background-color: var(--color-bg-secondary) !important; } */
+/* .md-editor .editor-container { border: 1px solid var(--color-border) !important; } */
+/* .md-editor, .md-editor .rc-md-navigation { background-color: var(--color-bg-secondary) !important; color: var(--color-text-primary) !important; border-color: var(--color-border) !important; } */
+
+
+.publish-button {
+    background-color: var(--color-accent-yellow);
+    color: var(--color-bg-deep);
+    padding: 12px 24px; /* Кнопка побольше */
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+.publish-button:hover {
+    background-color: var(--color-accent-gold);
+}

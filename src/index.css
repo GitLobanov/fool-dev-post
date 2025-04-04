@@ -1,13 +1,64 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* index.css */
+:root {
+  /* Из вашей палитры (примерные значения, подберите точнее при необходимости) */
+  --color-bg-deep: #1a1a1a;         /* Самый темный фон */
+  --color-bg-primary: #222222;     /* Фон чуть светлее (карточки?) */
+  --color-bg-secondary: #333333;   /* Еще светлее серый */
+  --color-bg-tertiary: #454545;    /* Серый для неактивных элементов/границ */
+
+  --color-text-primary: #e0e0e0;   /* Основной светлый текст */
+  --color-text-secondary: #a0a0a0; /* Второстепенный текст (время, ники) */
+  --color-text-placeholder: #777777;/* Текст плейсхолдеров */
+
+  --color-accent-yellow: #ffcc00; /* Яркий желтый акцент */
+  --color-accent-gold: #cc9900;   /* Более темный золотой (hover?) */
+  --color-accent-brown: #a07040;  /* Коричневый из палитры */
+  --color-accent-maroon: #904040;  /* Бордовый из палитры (как у вас кнопки "Следую") */
+  --color-accent-beige: #c0a080;  /* Бежевый */
+  --color-accent-greenish: #405040;/* Зеленоватый */
+
+  --color-border: #383838;       /* Цвет разделителей и границ */
+
+  --font-family-base: 'Inter', sans-serif; /* Пример шрифта, подключите если нужно */
+
+  --border-radius-small: 4px;
+  --border-radius-medium: 8px;
+
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 24px;
+  --spacing-xlarge: 32px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: var(--font-family-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-primary);
+}
+
+/* Добавьте базовые стили для ссылок, кнопок и т.д. */
+a {
+  color: var(--color-accent-yellow);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-accent-gold);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius-small);
+  padding: var(--spacing-small) var(--spacing-medium);
+  font-family: var(--font-family-base);
+}
+
+/* Глобальный контейнер для ограничения ширины и центрирования */
+.global-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-large) var(--spacing-medium);
 }

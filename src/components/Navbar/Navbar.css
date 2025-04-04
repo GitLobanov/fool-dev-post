@@ -1,0 +1,101 @@
+/* src/components/Navbar/Navbar.css */
+.navbar {
+    background-color: var(--color-bg-primary);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--spacing-small) 0;
+    position: sticky; /* Делаем навбар "липким" */
+    top: 0;
+    z-index: 1000; /* Чтобы был поверх контента */
+    height: 60px; /* Фиксированная высота */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar-logo {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--color-text-primary);
+}
+.navbar-logo:hover {
+    color: var(--color-text-primary); /* Не меняем цвет лого при ховере */
+}
+
+.navbar-search {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--border-radius-medium);
+    padding: 6px 12px;
+    width: 300px; /* Задать ширину поиска */
+}
+
+.navbar-search input {
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--color-text-primary);
+    margin-left: var(--spacing-small);
+    width: 100%;
+}
+.navbar-search input::placeholder {
+    color: var(--color-text-placeholder);
+}
+
+.search-icon {
+    color: var(--color-text-secondary);
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-medium);
+}
+
+.navbar-create-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-small);
+    background-color: var(--color-accent-yellow);
+    color: var(--color-bg-deep);
+    padding: 8px 15px;
+    border-radius: var(--border-radius-small);
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+.navbar-create-btn:hover {
+    background-color: var(--color-accent-gold);
+    color: var(--color-bg-deep);
+}
+.navbar-create-btn span { display: none; } /* Скрыть текст на маленьких экранах */
+
+/* Адаптивность для Navbar */
+@media (min-width: 600px) {
+    .navbar-create-btn span { display: inline; } /* Показать текст на больших экранах */
+}
+@media (max-width: 768px) {
+    .navbar-search { display: none; } /* Скрыть поиск на мобилке */
+    .navbar-container {
+        justify-content: space-between; /* Лого слева, действия справа */
+    }
+}
+
+.icon-button { /* Стиль для кнопок-иконок, если добавите */
+    background: none;
+    color: var(--color-text-secondary);
+    font-size: 1.2em;
+    padding: 5px;
+}
+.icon-button:hover {
+    color: var(--color-text-primary);
+    background: none;
+}
+.navbar-profile-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}

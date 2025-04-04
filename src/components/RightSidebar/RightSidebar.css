@@ -1,0 +1,71 @@
+/* RightSidebar.css */
+.right-sidebar {
+    padding: var(--spacing-medium) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-large); /* Расстояние между карточками */
+}
+
+.sidebar-card {
+    background-color: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-medium);
+    padding: var(--spacing-medium);
+}
+
+.sidebar-card-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin: 0 0 var(--spacing-medium) 0;
+    color: var(--color-text-primary);
+    border-bottom: 1px solid var(--color-border); /* Подчеркивание заголовка */
+    padding-bottom: var(--spacing-small);
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-small);
+}
+
+.tag-badge {
+    display: inline-block;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-secondary);
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border-radius: var(--border-radius-small);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tag-badge:hover {
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+}
+
+.popular-post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.popular-post-list li {
+    margin-bottom: var(--spacing-medium);
+}
+
+.popular-post-list li a {
+    font-weight: 500;
+    color: var(--color-text-primary); /* Ссылки в этом блоке можно сделать менее яркими */
+    display: block;
+    margin-bottom: 4px;
+}
+.popular-post-list li a:hover {
+    color: var(--color-accent-yellow);
+}
+
+.popular-post-list li p {
+    font-size: 0.9em;
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.4;
+}
