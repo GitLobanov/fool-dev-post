@@ -1,0 +1,49 @@
+.learning-sets-page h1 {
+    margin-bottom: var(--spacing-large);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--spacing-medium);
+}
+
+.learning-set-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid; /* Можно использовать grid или flex */
+    gap: var(--spacing-large);
+    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */ /* Пример для карточек */
+}
+
+.learning-set-item {
+    background-color: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-medium);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.learning-set-item:hover {
+    border-color: var(--color-accent-yellow);
+    /* transform: translateY(-2px); */ /* Легкий подъем при ховере */
+}
+
+.learning-set-link {
+    display: block; /* Чтобы ссылка занимала всю карточку */
+    padding: var(--spacing-medium) var(--spacing-large);
+    text-decoration: none;
+    color: inherit; /* Наследуем цвет текста */
+}
+
+.learning-set-link h2 {
+    font-size: 1.3em;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-small);
+    transition: color 0.2s ease;
+}
+.learning-set-link:hover h2 {
+    color: var(--color-accent-yellow);
+}
+
+.learning-set-link p {
+    font-size: 0.95em;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}

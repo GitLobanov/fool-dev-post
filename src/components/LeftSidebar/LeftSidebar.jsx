@@ -2,7 +2,7 @@ import React from 'react';
 // Используем NavLink для автоматического добавления active класса
 import { NavLink } from 'react-router-dom';
 // Иконки: дом, комменты, rss-лента, плюс/карандаш для создания, шестеренка, выход
-import { FaHome, FaComments, FaRss, FaPlus, FaCog, FaUser } from 'react-icons/fa';
+import {FaHome, FaComments, FaRss, FaPlus, FaCog, FaUser, FaLayerGroup} from 'react-icons/fa';
 import './LeftSidebar.css';
 
 const LeftSidebar = () => {
@@ -15,17 +15,22 @@ const LeftSidebar = () => {
                 <ul>
                     <li>
                         <NavLink to="/" className={getLinkClass} end> {/* `end` для точного совпадения "/" */}
-                            <FaHome className="nav-icon" /> Мой путь
+                            <FaHome className="nav-icon"/> Мой путь
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/interviews" className={getLinkClass}>
-                            <FaComments className="nav-icon" /> Интервью
+                            <FaComments className="nav-icon"/> Интервью
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/blog" className={getLinkClass}>
-                            <FaRss className="nav-icon" /> Блог
+                            <FaRss className="nav-icon"/> Блог
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/learning-sets" className={getLinkClass}>
+                            <FaLayerGroup className="nav-icon"/> Наборы обучения
                         </NavLink>
                     </li>
                     {/* Добавьте другие пункты */}

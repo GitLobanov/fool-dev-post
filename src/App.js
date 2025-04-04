@@ -9,6 +9,8 @@ import BlogPage from './pages/BlogPage/BlogPage';
 import InterviewPage from './pages/InterviewPage/InterviewPage';
 import BlogPostPage from './pages/BlogPostPage/BlogPostPage';
 import InterviewDetailPage from './pages/InterviewDetailPage/InterviewDetailPage';
+import LearningSetsPage from './pages/LearningSetsPage/LearningSetsPage';
+import LearningSetDetailPage from './pages/LearningSetDetailPage/LearningSetDetailPage';
 import './styles/global.css';
 import './App.css';
 
@@ -31,6 +33,8 @@ function App() {
                             {/* Интервью */}
                             <Route path="/interviews" element={<InterviewPage />} />
                             <Route path="/interviews/:interviewId" element={<InterviewDetailPage />} /> {/* <-- Детальная страница интервью */}
+                            <Route path="/learning-sets" element={<LearningSetsPage />} />
+                            <Route path="/learning-sets/:setId" element={<LearningSetDetailPage />} />
                         </Routes>
                     </main>
                     <div className="right-sidebar-container">
