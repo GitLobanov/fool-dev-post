@@ -30,7 +30,7 @@ const CreatePostPage = () => {
     };
 
     return (
-        <div className="create-post-page">
+        <div className="create-post-page" data-color-mode="dark">
             <h1>Создание нового поста</h1>
             <form onSubmit={handleSubmit} className="create-post-form">
                 <div className="form-group">
