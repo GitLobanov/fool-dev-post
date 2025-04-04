@@ -1,0 +1,92 @@
+/* Контейнер редактора */
+.create-post-page .w-md-editor {
+    border-radius: var(--border-radius-medium); /* Скругляем углы как у других элементов */
+    border: 1px solid var(--color-border);     /* Добавляем рамку в стиле сайта */
+    background-color: var(--color-bg-primary); /* Фон всего редактора */
+    box-shadow: none; /* Убираем возможные тени по умолчанию */
+}
+
+/* --- Тулбар --- */
+.create-post-page .w-md-editor-toolbar {
+    background-color: var(--color-bg-secondary); /* Фон тулбара чуть светлее */
+    border-bottom: 1px solid var(--color-border); /* Разделитель */
+}
+
+/* Кнопки на тулбаре */
+.create-post-page .w-md-editor-toolbar li button {
+    color: var(--color-text-secondary); /* Цвет иконок */
+}
+.create-post-page .w-md-editor-toolbar li button:hover,
+.create-post-page .w-md-editor-toolbar li.active button {
+    background-color: var(--color-bg-tertiary); /* Фон при наведении/активности */
+    color: var(--color-text-primary); /* Цвет иконки при наведении */
+}
+
+.create-post-page .cm-editor {
+    /* background-color: var(--color-bg-primary) !important; */ /* Фон обычно ок */
+}
+.create-post-page .cm-content {
+    /* <<<--- ДОБАВЬ !important ЗДЕСЬ --- */
+    color: var(--color-text-primary) !important;
+    caret-color: var(--color-accent-yellow);
+}
+/* Цвет текста плейсхолдера */
+.create-post-page .cm-placeholder {
+    /* <<<--- И ЗДЕСЬ (на всякий случай) --- */
+    color: var(--color-text-placeholder) !important;
+}
+/* Цвет выделения */
+.create-post-page .cm-selectionBackground {
+    background-color: rgba(255, 204, 0, 0.2) !important;
+}
+
+
+/* --- Область превью (справа) --- */
+.create-post-page .w-md-editor-preview {
+    /* background-color: var(--color-bg-deep); */ /* Фон обычно ок */
+}
+/* Стили для текста внутри превью */
+.create-post-page .wmde-markdown {
+    font-family: var(--font-family-base);
+    line-height: 1.7;
+    /* <<<--- ДОБАВЬ !important ЗДЕСЬ --- */
+    color: var(--color-text-primary) !important;
+    padding: var(--spacing-medium);
+}
+
+/* --- Также проверим цвет кода в превью --- */
+/* Если тема highlight.js не справляется с контрастом, можно попробовать так: */
+.create-post-page .wmde-markdown pre code,
+.create-post-page .wmde-markdown code {
+    /* Если текст *внутри* кода все еще тусклый, */
+    /* попробуй раскомментировать и настроить это: */
+    /* color: #abb2bf !important; */ /* Пример цвета из atom-one-dark */
+}
+
+/* Стили для inline кода вне pre */
+.create-post-page .wmde-markdown code:not(pre > code) {
+    background-color: var(--color-bg-secondary);
+    padding: 2px 5px;
+    border-radius: var(--border-radius-small);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    /* Убедимся в цвете */
+    color: #abb2bf !important; /* Или другой контрастный цвет */
+}
+
+/* --- Разделитель панелей --- */
+.create-post-page .w-md-editor-aree > .w-md-editor-splitter {
+    background-color: var(--color-border); /* Цвет разделителя */
+}
+.create-post-page .w-md-editor-aree > .w-md-editor-splitter:hover {
+    background-color: var(--color-accent-yellow); /* Подсветка разделителя при наведении */
+}
+
+/* --- Увеличим отступ под редактором --- */
+.create-post-form .form-group:has(.w-md-editor) { /* Если браузер поддерживает :has */
+    margin-bottom: var(--spacing-large);
+}
+/* Фоллбэк, если :has не поддерживается (применить ко всем .form-group) */
+.create-post-form .form-group {
+    margin-bottom: var(--spacing-large);
+}

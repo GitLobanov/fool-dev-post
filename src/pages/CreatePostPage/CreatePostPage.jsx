@@ -33,7 +33,7 @@ const CreatePostPage = () => {
         <div className="create-post-page" data-color-mode="dark">
             <h1>Создание нового поста</h1>
             <form onSubmit={handleSubmit} className="create-post-form">
-                <div className="form-group">
+                <div className="form-group text-form">
                     <label htmlFor="post-title">Заголовок</label>
                     <input
                         type="text"
@@ -45,7 +45,7 @@ const CreatePostPage = () => {
                     />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group text-form">
                     <label htmlFor="post-description">Краткое описание (для превью)</label>
                     <textarea
                         id="post-description"
@@ -64,12 +64,11 @@ const CreatePostPage = () => {
                         onChange={setContent} // Передаем setContent напрямую
                         height={400}          // Задаем высоту редактора
                         preview="live"        // Включаем живое превью (или 'edit', 'preview')
-                        // Другие опции: https://github.com/uiwjs/react-md-editor#options-props
                     />
                     {/* --- --- */}
                 </div>
 
-                <div className="form-group">
+                <div className="form-group text-form">
                     <label htmlFor="post-tags">Теги (через запятую)</label>
                     <input
                         type="text"

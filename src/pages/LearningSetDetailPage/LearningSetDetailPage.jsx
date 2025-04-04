@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import PostCard from '../../components/PostCard/PostCard';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import 'highlight.js/styles/atom-one-dark.css';
+import PostCard from '../../components/PostCard/PostCard';
 import './LearningSetDetailPage.css';
 
 // --- Mock Data (оставляем как есть) ---
