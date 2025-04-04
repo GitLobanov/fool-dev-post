@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import PostCard from '../../components/PostCard/PostCard';
-// Импортируем ReactMarkdown (предполагаем, что ты его установишь: npm install react-markdown)
-// import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeHighlight from 'rehype-highlight';
+import 'highlight.js/styles/atom-one-dark.css';
 import './LearningSetDetailPage.css';
 
 // --- Mock Data (оставляем как есть) ---
@@ -52,9 +54,11 @@ const ExpandedPostItem = ({ post }) => {
             )}
 
             <div className="expanded-post-content content-body">
-                {/* Используем dangerouslySetInnerHTML или ReactMarkdown */}
-                <div dangerouslySetInnerHTML={{ __html: post.content?.replace(/\n/g, '<br />') || '' }} />
-                {/* <ReactMarkdown>{post.content || ''}</ReactMarkdown> */}
+                <ReactMarkdown
+                    children={post.content || ''}
+                    remarkPlugins={[remarkGfm]}
+                    rehypePlugins={[rehypeHighlight]}
+                />
             </div>
 
             {/* Отображение ресурсов, если есть */}
@@ -78,7 +82,7 @@ const ExpandedPostItem = ({ post }) => {
 
 
 const LearningSetDetailPage = () => {
-    const { setId } = useParams();
+    const {setId} = useParams();
     const [learningSet, setLearningSet] = useState(null);
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -191,7 +195,7 @@ const LearningSetDetailPage = () => {
                         // --- Расширенный вид ---
                         <div className="expanded-view-container">
                             {posts.map(post => (
-                                <ExpandedPostItem key={`expanded-${post.postType}-${post.id}`} post={post} />
+                                <ExpandedPostItem key={`expanded-${post.postType}-${post.id}`} post={post}/>
                             ))}
                         </div>
                     )
@@ -204,3 +208,4 @@ const LearningSetDetailPage = () => {
 };
 
 export default LearningSetDetailPage;
+

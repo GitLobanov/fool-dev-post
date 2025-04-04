@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
+import MDEditor from '@uiw/react-md-editor';
+import "@uiw/react-md-editor/markdown-editor.css";
 import './CreatePostPage.css';
-// Можно импортировать Markdown редактор, например react-markdown-editor-lite или @uiw/react-md-editor
-// import MdEditor from 'react-markdown-editor-lite';
-// import 'react-markdown-editor-lite/lib/index.css'; // Стили для редактора
+
 
 const CreatePostPage = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    const [content, setContent] = useState(''); // Для Markdown
-    const [tags, setTags] = useState(''); // Строка тегов через запятую
+    const [content, setContent] = useState('**Начните писать здесь!**');
+    const [tags, setTags] = useState('');
 
     // Placeholder для обработчика Markdown
     function handleEditorChange({ html, text }) {
@@ -58,20 +58,15 @@ const CreatePostPage = () => {
 
                 <div className="form-group">
                     <label htmlFor="post-content">Основной контент (Markdown)</label>
-                    {/* Здесь в идеале нужен Markdown редактор */}
-                    <textarea
-                        id="post-content"
+                    {/* --- Заменяем textarea на MDEditor --- */}
+                    <MDEditor
                         value={content}
-                        onChange={(e) => setContent(e.target.value)} // Временно обычный textarea
-                        rows="15"
-                        required
-                        placeholder="Пишите основной текст поста здесь, используя Markdown разметку..."
-                    ></textarea>
-                    {/* <MdEditor
-             style={{ height: '500px' }}
-             renderHTML={text => mdParser.render(text)} // Нужен парсер типа markdown-it
-             onChange={handleEditorChange}
-           /> */}
+                        onChange={setContent} // Передаем setContent напрямую
+                        height={400}          // Задаем высоту редактора
+                        preview="live"        // Включаем живое превью (или 'edit', 'preview')
+                        // Другие опции: https://github.com/uiwjs/react-md-editor#options-props
+                    />
+                    {/* --- --- */}
                 </div>
 
                 <div className="form-group">

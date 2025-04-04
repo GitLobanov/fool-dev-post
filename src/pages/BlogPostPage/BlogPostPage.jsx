@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom'; // useParams для получения ID, Link для возврата
+import { useParams, Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeHighlight from 'rehype-highlight';
+import 'highlight.js/styles/atom-one-dark.css';
 import './BlogPostPage.css'; // Стили для страницы
 
 // --- Mock Data (Возьмем из BlogPage для примера) ---
@@ -57,7 +61,8 @@ const BlogPostPage = () => {
 
                 {/* Метаданные поста */}
                 <div className="post-detail-meta">
-                    <img src={post.author?.avatarUrl || "https://via.placeholder.com/30"} alt={post.author?.name} className="author-avatar-small"/>
+                    <img src={post.author?.avatarUrl || "https://via.placeholder.com/30"} alt={post.author?.name}
+                         className="author-avatar-small"/>
                     <span>Автор: {post.author?.name || 'Unknown'}</span>
                     <span className="separator">|</span>
                     <span>{post.timestamp || 'Дата неизвестна'}</span>
@@ -71,10 +76,17 @@ const BlogPostPage = () => {
                 )}
 
                 {/* Основной контент поста */}
-                {/* В идеале, здесь нужен рендерер Markdown */}
-                <div className="content-body" dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br />') }}>
-                    {/* Пока просто заменяем переносы строк на <br />, но лучше использовать Markdown парсер */}
-                    {/* Например, с 'react-markdown': <ReactMarkdown>{post.content}</ReactMarkdown> */}
+                <div className="content-body">
+                    <ReactMarkdown
+                        children={post.content || ''} // Передаем markdown строку
+                        remarkPlugins={[remarkGfm]}    // Включаем GFM (таблицы, etc.)
+                        rehypePlugins={[rehypeHighlight]} // Включаем подсветку кода
+                        // Можно настроить компоненты, если нужно кастомное отображение
+                        // components={{
+                        //     a: ({node, ...props}) => <a target="_blank" rel="noopener noreferrer" {...props} />,
+                        //     // другие кастомные рендеры
+                        // }}
+                    />
                 </div>
 
                 {/* Ресурсы */}
