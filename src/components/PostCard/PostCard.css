@@ -104,3 +104,56 @@
 .action-btn:hover {
     color: var(--color-text-primary);
 }
+
+.post-title-link {
+    text-decoration: none;
+    color: inherit; /* Наследуем цвет от родителя */
+}
+.post-title-link:hover .post-title {
+    color: var(--color-accent-yellow); /* Подсвечиваем заголовок при наведении */
+}
+
+.read-more-btn {
+    display: inline-block; /* Чтобы работал margin-top */
+    margin-top: var(--spacing-small);
+    background-color: transparent;
+    color: var(--color-accent-yellow);
+    padding: var(--spacing-small) 0;
+    font-weight: 600;
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+}
+.read-more-btn:hover {
+    color: var(--color-accent-gold);
+    text-decoration: underline; /* Добавляем подчеркивание при ховере */
+}
+
+/* Стили для блока ресурсов */
+.post-resources {
+    margin-top: var(--spacing-medium);
+    padding-top: var(--spacing-small);
+    /* Добавляем разделитель только если есть контент выше */
+    border-top: 1px solid var(--color-border);
+    font-size: 0.9em;
+}
+.post-resources strong {
+    color: var(--color-text-secondary);
+    display: block;
+    margin-bottom: var(--spacing-small);
+    font-weight: 500; /* Не слишком жирный */
+}
+.post-resources ul {
+    list-style: disc; /* Или none, если не нужны маркеры */
+    padding-left: var(--spacing-medium); /* Отступ для маркеров */
+    margin: 0;
+}
+.post-resources li {
+    margin-bottom: 5px;
+}
+.post-resources a {
+    /* Используем основной цвет ссылок */
+    color: var(--color-accent-yellow);
+    word-break: break-all; /* Перенос длинных ссылок */
+}
+.post-resources a:hover {
+    text-decoration: underline;
+}

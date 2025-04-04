@@ -1,0 +1,9 @@
+.interview-page h1 {
+    margin-bottom: var(--spacing-large);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--spacing-medium);
+}
+
+.post-list {
+    /* Стили для списка вопросов */
+}

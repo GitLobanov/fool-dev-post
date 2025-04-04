@@ -1,0 +1,8 @@
+/* src/pages/InterviewDetailPage/InterviewDetailPage.css */
+/* Можно импортировать стили из BlogPostPage, если они универсальны */
+/* @import '../BlogPostPage/BlogPostPage.css'; */
+
+/* Или определить специфичные стили */
+.interview-detail-page {
+    /* Стили, если отличаются от BlogPostPage */
+}
